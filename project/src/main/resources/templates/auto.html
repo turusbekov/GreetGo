@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=2"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>Autondication</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+
+    <body>
+        <div class="jumbotron text-center">
+            <h3>Autorithation</h3>
+        </div>
+        <div class="container">
+            <div class="row well text-center">
+                <form action="#" th:action="@{/}" th:object="${user}" method="post">
+
+                    <label class="col-sm-12" style="display:inline-table">Email:</label>
+
+                    <input type = "text" name ="email" th:fields="*{email}"/>
+                    <br/>
+                    <label class="col-sm-12">Password:</label>
+
+                    <input type="password" name ="password" th:fields="*{password}"/>
+                    <br/>
+                    <button>Submit</button>
+
+                </form>
+            </div>
+        </div>
+        <div style="color:red; font-size: 20px;" class="text-center" th:text="${error}"> </div>
+    </body>
+
+
+</html>

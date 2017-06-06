@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=2"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h2 style="color:red">Registration</h2>
+    </div>
+    <div style="width:300px; height: 300px; border-style: solid; margin: auto; background-color: cyan;">
+    <form action="#" th:action="@{/right}" th:object="${user}" method="post">
+        <label class="col-sm-12 text-center">Name:</label>
+        <input class="col-sm-12" name="name" type="text"/>
+        <label class="col-sm-12 text-center">Surname:</label>
+        <input class="col-sm-12" name="surname" type="text"/>
+        <label class="col-sm-12 text-center">Email:</label>
+        <input class="col-sm-12" name="email" type="text"/>
+        <label class="col-sm-12 text-center">Password:</label>
+        <input class="col-sm-12" name="password" type="password"/>
+        <button style="color: green; margin-left: 120px;">Add</button>
+    </form>
+    </div>
+</body>
+</html>

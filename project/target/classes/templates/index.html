@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=2"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Main page</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <div style="float: right; color: green">
+        <form action="#" th:action="@{/register}" method="post">
+            <button>Add Student</button>
+        </form>
+    </div>
+
+    <div class="jumbotron text-center">
+
+        <h3>List of Students</h3>
+    </div>
+
+
+    <div class="container">
+        <div class="row " th:each="list : ${users}" >
+            <div style=" display: inline">
+                <form action="#" th:action="@{/delete}" th:object="${user}" method="post">
+
+                    <label style="color: aqua">Name:</label>
+                    <h3 style="display: inline" th:text="${list.name}"></h3>
+                    <br/>
+                    <label style="color: purple">Surname:</label>
+                    <h3 style="display: inline" th:text="${list.surname}"></h3>
+                    <br/>
+                    <label style="color: lawngreen">Email:</label>
+                    <h3 style="display: inline" th:text="${list.email}"></h3>
+                    <br/>
+                    <input type="hidden" name="name" th:value="${list.name}"/>
+                    <input type="hidden" name="surname" th:value="${list.surname}"/>
+
+                    <button style="color:red; margin-left: 400px; margin-top: -500px;">Delete</button>
+                    <hr border="2px" width="800px" border-color="red"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
